@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/hello-world_2.13-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/dbConnect.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/dbConnect.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/FileUtil$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/FileUtil$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/CLI.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/CLI.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	projZero/FileUtil.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gio/projects/revature-projects/project-zero/project-0/target/scala-2.13/classes/projZero/FileUtil.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
