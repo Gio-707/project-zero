@@ -29,7 +29,6 @@ object FileUtil{
     // parses file and adds it to the data base, takes in file converted to string.
     def addCSVtoBase(stringFile: String): Unit ={
        val file_array = stringFile.split("[, ]").map(_.trim)
-       val updater = new dbConnect
        var counter = 0
        while(counter != file_array.length){
           var phone_num = file_array(counter)
@@ -38,7 +37,7 @@ object FileUtil{
           counter = counter + 1
           var l_name = file_array(counter)
           counter = counter + 1
-          updater.addNewEmployee(phone_num,f_name,l_name)
+          DBconnect.addNewEmployee(phone_num,f_name,l_name)
      }
      
     }

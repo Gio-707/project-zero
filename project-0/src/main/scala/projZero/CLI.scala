@@ -50,39 +50,95 @@ class CLI{
         println("[Upload] file containing employee information")
         println("[Exit] application")
     }
-
+    //need phone, last name, first name in that order for method
     def addEmployee(): Unit ={
-        val empAdd = new dbConnect()
-        empAdd.addNewEmployee("707-295-3321", "Reciver", "Booty")
-        println("worked?")
+        println() // added these for readibility, will do for each method
+        println("To add a new employee, please enter the employees first name.")
+        var f_name = StdIn.readLine()
+        println("Now please enter the employees last name.")
+        var l_name = StdIn.readLine()
+        println("Finally, please enter the employees phone number with the format ###-###-####")
+        var phone = StdIn.readLine()
+        DBconnect.addNewEmployee(phone,l_name,f_name)
+        println("Employee succesfully added! the new employee list is:")
+        DBconnect.viewEmployeeInfo()
+        println()
     }
-
+    // removes employee based on id number
     def removeEmployee: Unit ={
-        println("remove employee goes here")
-    }
+        println() 
+        println("To remove an employee, enter that employees id as listed on the table.")
+        DBconnect.viewEmployeeInfo()
+        println()
+        println("Please enter the desired id.")
+        var employee_id = StdIn.readInt()
+        DBconnect.removeEmployee(employee_id)
+        println("Employee susccesfully removed! The updated list is:")
+        DBconnect.viewEmployeeInfo()
+        println()
 
+    }
+    // will update employee, for simplicities sake, updates every field so unchanged fields must be reentered
     def updateEmployee: Unit ={
-        println("update employee goes here")
-    }
+        println()
+        println("Enter the id of employee that needs to be updated from the following table:")
+        DBconnect.viewEmployeeInfo()
+        println()
+        println("please enter the id now")
+        var employee_id = StdIn.readInt()
+        println("enter the updated first name.")
+        var f_name = StdIn.readLine()
+        println("enter updated last name")
+        var l_name = StdIn.readLine()
+        println("enter updated phone number")
+        var phone = StdIn.readLine()
+        DBconnect.updateEmployee(employee_id,phone,f_name,l_name)
+        println("Success! Updated list:")
+        DBconnect.viewEmployeeInfo()
+        println()
 
+    }
+     // only implemented limited capabiltiy, will change row decided by column id, then change who is working by changing the employee id
     def changeSchedule: Unit ={
-        println("change sched goes here")
+        println()
+        println("Hello, please enter the time id for the day you wish to change:")
+        DBconnect.viewSchedule()
+        var time_id = StdIn.readInt()
+        println()
+        println("Enter the id of the employee you want to work instead from the following list:")
+        DBconnect.viewEmployeeInfo()
+        var employee_id = StdIn.readInt()
+        DBconnect.changeSchedule(time_id, employee_id)
+        println("Changes saved, new schedule:")
+        DBconnect.viewSchedule()
+        println()
+
     }
     
     def uploadFile: Unit ={
-        println("Enter the name of one of the .csv files to upload it to the database.")
+        println()
+        println("Enter the name of one of the .csv files to upload it to our employees.")
+        println("Available files:")
         FileUtil.getTopLevelFileNames().foreach(println)
-        println(FileUtil.getTextContent("testngread.csv"))
-        
+        var filename = StdIn.readLine()
+        FileUtil.addCSVtoBase(FileUtil.getTextContent(filename))
+        println("Success! our new employees list:")
+        DBconnect.viewEmployeeInfo()
+        println()
     }
-    
+    // shows employees
     def viewInfo: Unit = {
-        val empInf = new dbConnect()
-        empInf.viewEmployeeInfo()
+        println()
+        println("The following list contans all current employees.")
+        DBconnect.viewEmployeeInfo()
+        println()
     }
-    
+    // shows schedule
     def viewSchedule: Unit = {
-        println("view shcedule goes here")
+        println()
+        println("This is the schedule for the next two weeks.")
+        DBconnect.viewSchedule()
+        println()
     }
     
 
